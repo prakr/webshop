@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Administrator</title>
+    </h:head>
+    <h:body>
+        <h2> Manage Inventory </h2>
+        <h:form>
+            <p>
+             <h:outputLabel for="Type" value="gnomeType : "/> 
+             <h:inputText id="Type" value="#{webShopManager.gnomeType}" />
+             </p>
+             <p>
+                <h:outputLabel for="amount" value="gnomeAmount : "/> 
+                <h:inputText id="amount" value="#{webShopManager.gnomeAmount}" />
+             </p>
+            
+              <p>
+                <h:outputLabel for="price" value="gnomePrice : "/> 
+                <h:inputText id="price" value="#{webShopManager.gnomePrice}" />
+             </p>
+            
+            <p>
+                <h:commandButton value="Add this gnome" action="#{webShopManager.createGnome}" />
+                <h:commandButton value="Remove this gnome" action="#{webShopManager.deleteGnome()}" />
+                <h:commandButton value="Update this gnome" action="#{webShopManager.updateGnome()}" />
+            </p>
+        </h:form>
+        
+        <h2> Ban a user : </h2>
+        <h:form>
+            <h:outputText value="User name : " />
+            <h:inputText value="#{webShopManager.userName}" />
+            <h:commandButton value="Ban user" action="#{webShopManager.banUser()}" />
+        </h:form>
+        
+        <p>
+           <h:outputText value="#{webShopManager.error}" rendered="#{webShopManager.error != null}" style="color:red"/>
+        </p>
+       
+        <h:form>
+            <h:commandButton value="Logout" action="#{webShopManager.logOut()}"/>
+        </h:form>
+    </h:body>
+</html>
+

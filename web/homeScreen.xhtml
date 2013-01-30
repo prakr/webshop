@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Web shop</title>
+    </h:head>
+    <h:body>
+         <h:form>
+        <h1> Welcome to our web shop </h1>
+         <p>
+             <h:outputLabel for="pseudoname" value="loginuser "/> 
+             <h:inputText id="pseudoname" value="#{webShopManager.currentPseudo}" />
+             </p>
+             <p>
+                <h:commandButton value="See Available Gnomes" action="#{webShopManager.showAvailableGnomes()}"/>
+                <h:commandButton value="Shopping Basket" action="#{webShopManager.showCart()}"/>
+             </p>
+             </h:form>
+            <h2>Inventory :</h2>
+             <h:form>
+             <p>
+             <h:outputLabel for="Item1type"  value="ItemType: "/>
+             <h:outputText id="Item1type" value="#{webShopManager.gnome1Type}"/>
+             <h:outputLabel for="Item1price"  value="ItemPrice: "/>
+             <h:outputText id="Item1price" value="#{webShopManager.gnome1Price}"/>
+             <h:outputLabel for="Item1amount"  value="ItemQuantity: "/>
+             <h:outputText id="Item1amount" value="#{webShopManager.gnome1Amount}"/>
+             </p>
+             <p>
+             <h:outputLabel for="Item2type"  value="ItemType: "/>
+             <h:outputText id="Item2type" value="#{webShopManager.gnome2Type}"/>
+             <h:outputLabel for="Item2price"  value="ItemPrice: "/>
+             <h:outputText id="Item2price" value="#{webShopManager.gnome2Price}"/>
+             <h:outputLabel for="Item2amount"  value="ItemQuantity: "/>
+             <h:outputText id="Item2amount" value="#{webShopManager.gnome2Amount}"/>
+             </p>
+                 
+            <p>
+             <h:outputLabel for="Item3type"  value="ItemType: "/>
+             <h:outputText id="Item3type" value="#{webShopManager.gnome3Type}"/>
+             <h:outputLabel for="Item3price"  value="ItemPrice: "/>
+             <h:outputText id="Item3price" value="#{webShopManager.gnome3Price}"/>
+             <h:outputLabel for="Item3amount"  value="ItemQuantity: "/>
+             <h:outputText id="Item3amount" value="#{webShopManager.gnome3Amount}"/>
+             </p>
+              <p>
+                <h:outputLabel for="desiredgnome" value="GnomeType"/> 
+                <h:inputText id="desiredgnome" value="#{webShopManager.desiredCartType}" />
+                <h:commandButton value="AddtoCart" action="#{webShopManager.addToCart()}"/>
+             </p>
+              </h:form>
+             <h2>Shopping cart :</h2>
+             <h:form>
+             <p>
+             <h:outputLabel for="cart1type"  value="ItemType: "/>
+             <h:outputText id="cart1type" value="#{webShopManager.gnome1CartType}"/>
+             <h:outputLabel for="cart1price"  value="ItemPrice: "/>
+             <h:outputText id="cart1price" value="#{webShopManager.gnome1CartPrice}"/>
+             <h:outputLabel for="cart1amount"  value="ItemQuantity: "/>
+             <h:outputText id="cart1amount" value="#{webShopManager.gnome1CartAmount}"/>
+             </p>
+             <p>
+             <h:outputLabel for="cart2type"  value="ItemType: "/>
+             <h:outputText id="cart2type" value="#{webShopManager.gnome2CartType}"/>
+             <h:outputLabel for="cart2price"  value="ItemPrice: "/>
+             <h:outputText id="cart2price" value="#{webShopManager.gnome2CartPrice}"/>
+             <h:outputLabel for="cart2amount"  value="ItemQuantity: "/>
+             <h:outputText id="cart2amount" value="#{webShopManager.gnome2CartAmount}"/>
+             </p>
+                 
+            <p>
+             <h:outputLabel for="cart3type"  value="ItemType: "/>
+             <h:outputText id="cart3type" value="#{webShopManager.gnome3CartType}"/>
+             <h:outputLabel for="cart3price"  value="ItemPrice: "/>
+             <h:outputText id="cart3price" value="#{webShopManager.gnome3CartPrice}"/>
+             <h:outputLabel for="cart3amount"  value="ItemQuantity: "/>
+             <h:outputText id="cart3amount" value="#{webShopManager.gnome3CartAmount}"/>
+             </p>
+              <p>
+                <h:outputLabel for="cartgnome" value="GnomeType"/> 
+                <h:inputText id="cartgnome" value="#{webShopManager.desiredCartType}" />
+                <h:commandButton value="removetoCart" action="#{webShopManager.removeFromCart()}"/>
+             </p>
+             <p>
+                <h:commandButton value="emptyCart" action="#{webShopManager.removeCart()}"/>
+             </p>
+              <p>
+                 <h:commandButton value="buy" action="#{webShopManager.buy()}"/>
+              </p>
+             <p>
+                 <h:outputText value="#{webShopManager.error}" rendered="#{webShopManager.error != null}" style="color:red"/>
+             </p>
+           </h:form>
+        <h:form>
+            <h:commandButton value="Logout" action="#{webShopManager.logOut}"/>
+        </h:form>
+    </h:body>
+</html>
+

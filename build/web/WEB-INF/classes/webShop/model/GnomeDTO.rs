@@ -1,0 +1,1 @@
+webShop.model.GnomeDTO
